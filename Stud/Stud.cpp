@@ -5,13 +5,13 @@ int main()
 {
 	setlocale(0, "");
 
-	int n, sum = 0, c_odd = 0, nnz = 0; //nnz - number of non-zero
+	int n, sum = 0, nnz = 0; //nnz - number of non-zero, sum - сумма вершин, n - количество вершин
 	bool f = 1;
 
 	cout << "Введите количество вершин:" << endl;
 	cout << endl;
 	cin >> n;
-	cout<< endl;
+	cout << endl;
 
 	int* arr = new int[n];
 
@@ -26,10 +26,6 @@ int main()
 		{
 			nnz++;
 		}
-		if (*(arr + i) % 2 != 0)
-		{
-			c_odd++;
-		}
 	}
 
 	for (int i = 0; i < n; i++)
@@ -39,7 +35,6 @@ int main()
 	}
 
 	if (sum % 2 != 0) f = 0; //сумма степеней графа четна
-	if (c_odd % 2 != 0) f = 0; //проверка по лемме о рукопожатиях
 
 	cout << endl;
 
